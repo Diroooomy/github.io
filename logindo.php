@@ -19,7 +19,7 @@ else{
     {
         if ($row['password']==$password) {
             echo  "欢迎你 " . $row['name'];
-            header("refresh:1;url=index.php");
+            header("refresh:1;url=data.php");
             print('正在加载，请稍等...<br>1秒后自动跳转到首页');
         }
         else{

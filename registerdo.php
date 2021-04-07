@@ -10,7 +10,7 @@ if($conn->query($sql))
 {
         echo '注册成功';
 }
-header("refresh:2;url=login.php");
+header("refresh:2;url=index.php");
 print('正在加载，请稍等...<br>2秒后自动跳转到登录页面');
 // }
 // else{

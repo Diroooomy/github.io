@@ -44,29 +44,32 @@
         <div class="adds-stu">
             <form action="addsdo.php" method="post">
                 <div>
-                    <p>姓名:</p>
-                    <input type="text" name="name" id="">
+                    <p>Sno:</p>
+                    <input type="text" name="Sno" id="">
                 </div>
                 <div>
-                    <p>性别:</p>
+                    <p>Sname:</p>
+                    <input type="text" name="Sname" id="">
+                </div>
+                <div>
+                    <p>Ssex:</p>
                     <span>
-                    男:<input type="radio" checked='checked' name="sex" value="男" id="">&nbsp;&nbsp;&nbsp;
-                    女:<input type="radio" name="sex" value="女" id="" >
+                    男:<input type="radio" checked='checked' name="Ssex" value="男" id="">&nbsp;&nbsp;&nbsp;
+                    女:<input type="radio" name="Ssex" value="女" id="" >
                     </span>
                 </div>
                 <div>
-                    <p>年龄:</p>
-                    <input type="text" name="age" id="">
+                    <p>Sage:</p>
+                    <input type="text" name="Sage" id="">
                 </div>
                 <div>
-                    <p>居住城市:</p>
-                    <input type="text" name="city" id="">
+                    <p>Sdept:</p>
+                    <input type="text" name="Sdept" id="">
                 </div>
-                <div align="center" >
+                <div style="margin-left:30%">
                     <button>提交</button>
                 </div>
             </form>
-            <a href="index.php">返回</a>
         </div>
     </div>    
 </body>

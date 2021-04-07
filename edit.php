@@ -1,9 +1,9 @@
 <?php
 include 'database.php';
-if(isset($_GET['id']))
+if(isset($_GET['Sno']))
 {
-    $id = $_GET['id'];
-    $sql = "select * from myguests where id=$id";
+    $Sno = $_GET['Sno'];
+    $sql = "select * from student where Sno=$Sno";
     $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -58,15 +58,15 @@ if(isset($_GET['id']))
                         {
                 ?>
             <div>
-                <p>姓名:</p>
-                <input type="text" name="name" id="" value="<?php echo  $row['name'];  ?>">
+                <p>Sno:</p>
+                <input type="text" name="name" id="" value="<?php echo  $row['Sno'];  ?>">
             </div>
             <div>
-                <p>性别:</p>
+                <p>Ssex:</p>
                 <span>
                 男:<input type="radio" 
                 <?php
-                    if($row['sex'] == "男"){ //sex=1 就加check
+                    if($row['Ssex'] == "男"){ //sex=1 就加check
                         echo 'checked';
                     }else{
                         echo '';
@@ -75,7 +75,7 @@ if(isset($_GET['id']))
                 女:<input
                 <input type="radio" 
                 <?php
-                    if($row['sex'] == "女"){ //sex=0 就加check
+                    if($row['Ssex'] == "女"){ //sex=0 就加check
                         echo 'checked';
                     }else{
                         echo '';
@@ -85,16 +85,16 @@ if(isset($_GET['id']))
                 </span>
             </div>
             <div>
-                <p>年龄:</p>
-                <input type="text" name="age" id="" value="<?php echo  $row['age'];  ?>">
+                <p>Sage:</p>
+                <input type="text" name="age" id="" value="<?php echo  $row['Sage'];  ?>">
                 <input type="hidden" name="id" id="" value="<?php echo  $row['id'];  ?>">
             </div>
             <div>
-                <p>居住城市:</p>
-                <input type="text" name="city" id="" value="<?php echo  $row['city'];  ?>">
+                <p>Sdept:</p>
+                <input type="text" name="city" id="" value="<?php echo  $row['Sdept'];  ?>">
             </div>
             <div>
-            <div>
+            <div style="margin-left:30%;">
             <button>提交</button>
             </div>
             <?php 

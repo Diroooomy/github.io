@@ -1,7 +1,5 @@
 <?php
 include 'database.php';
-$sql = "select * from myguests";
-$result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,44 +7,62 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="jquery.min.js" ></script>
-    <title>学生信息表</title>
+    <title>登录</title>
+    <style>
+        .adds-stu-wrap{
+            width: 700px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 100px;
+           
+        }
+        .adds-stu{
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: #eee;
+            padding: 15px 10px;
+        }
+        .adds-stu div{
+            float: left;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .adds-stu div>p{
+            float: left;
+            width: 100px;
+            margin: 0 100px 0 0;
+            text-align: right;
+
+        }
+        .adds-stu div>input{
+            float: center;
+            width: 260px;
+        }
+    </style>
 </head>
 <body>
-    <h2 style="float:left;width:100%;margin-top:50px; text-align:center">学生信息管理中心</h2>
-    <div style="text-align:center">
-    <a href="adds.php" style="padding:3px;font-size:16px;background-color:greenyellow">添加学生信息</a>
-    共有<?php echo mysqli_num_rows($result); ?>个学生信息
-    </div>
-    <table style="margin-top:60px" align="center" width="60%" border="" cellspacing="0" cellpadding="0">
-        <tr><th>id</th><th>性别</th><th>姓名</th><th>年龄</th><th>居住城市</th><th>操作</th></tr>
-        <?php 
-            if(mysqli_num_rows($result) > 0){
-                while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-        <tr>
-            <td align="center"><?php echo  $row['id'];  ?></td>
-            <td align="center"><?php echo  $row['sex'];  ?></td>
-            <td align="center"><?php echo  $row['name'];  ?></td>
-            <td align="center"><?php echo  $row['age'];  ?></td>
-            <td align="center"><?php echo  $row['city'];  ?></td>
-            <td align="center">
-                <a href="edit.php?id=<?php echo  $row['id'];  ?>" style="color:forestgreen">修改</a> | <a href="javascript:del_sure(<?php echo  $row['id'];  ?>)" style="color:crimson">删除</a>
-            </td>
-        </tr>
-        <?php   
-             }
-            }
-        ?>
-    </table>
-    <script>
-        function del_sure(id){//形参
-        if(confirm("确认删除吗") ==true){
-            window.location.href="delete.php?id="+id;
-        }else{
-            return ;
-        }
-      }
-    </script>
+    <div class="adds-stu-wrap">
+    <h2 class="head" style="text-align:center">信息管理系统</h2>
+        <div class="adds-stu">
+            <form action="logindo.php" method="post">
+            <div>
+                <p>用户名:</p>
+                <input type="text" name="name" id="" value="">
+            </div>
+            <div>
+                <p>密码:</p>
+                <input type="password" name="password" id="" value="">
+            </div>
+            <div>
+            <div align='center'>
+            <button>登录</button>
+            </div>
+            <div align='center'>
+                还没有账号？<a href="register.php">立即注册</a>
+            </div>
+            </form>
+        </div>
+    </div>    
 </body>
 </html>
